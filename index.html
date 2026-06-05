@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuliana Tech | Контакты</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Светлая и нежная цветовая палитра */
+            --bg-color: #fdfbfb;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-hover: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --text-primary: #1e293b; /* Темно-серый для отличной читаемости */
+            --text-secondary: #64748b;
+            --accent-color: #f472b6; /* Мягкий розовый */
+            --accent-glow: rgba(244, 114, 182, 0.3);
+            --border-radius: 20px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Анимированный нежный фон */
+        .bg-animated {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.6;
+            animation: float 15s infinite ease-in-out alternate;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(251, 194, 235, 0.5); /* Пудрово-розовый */
+            top: -5%;
+            left: -10%;
+        }
+
+        .shape-2 {
+            width: 500px;
+            height: 500px;
+            background: rgba(166, 193, 238, 0.4); /* Нежно-голубой/персиковый оттенок */
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 40px) scale(1.05); }
+        }
+
+        /* Основной контент */
+        .profile-container {
+            text-align: center;
+            margin-bottom: 32px;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            margin-bottom: 16px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+            color: #334155;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            z-index: 1;
+        }
+
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Эффект Glassmorphism для светлой темы */
+        .btn {
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            padding: 16px 22px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--glass-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(244, 114, 182, 0.15);
+            border-color: #fff;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .icon-box {
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+        }
+
+        h2.section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: -16px;
+            padding-left: 8px;
+            font-weight: 600;
+        }
+
+        .payment-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .compact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .compact-card:hover {
+            background: var(--glass-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(244, 114, 182, 0.15);
+        }
+
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .card-number {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--text-primary);
+        }
+
+        .copy-btn-compact {
+            background: #fff;
+            color: var(--text-primary);
+            border: 1px solid #e2e8f0;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .copy-btn-compact:hover {
+            background: #fdf2f8;
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .copy-btn-compact:active {
+            transform: scale(0.92);
+        }
+
+        /* Цвета иконок */
+        .color-tg { color: #38bdf8; }
+        .color-inst { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .color-phone { color: #10b981; }
+        .color-vk { color: #0077ff; }
+        .color-discord { color: #5865F2; }
+        .color-steam { color: #0284c7; }
+        .humo { color: #eab308; }
+        .visa { color: #3b82f6; }
+
+        /* Уведомление */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #fff;
+            color: var(--accent-color);
+            border: 1px solid rgba(244, 114, 182, 0.3);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(244, 114, 182, 0.2);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-animated">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+    </div>
+
+    <div class="profile-container">
+        <img src="logo.jpg" alt="Yuliana Tech Logo" class="profile-img">
+        <h1>Yuliana Tech</h1>
+        <p>Сборка ПК | Софт | Решения</p>
+    </div>
+
+    <div class="content-container">
+        <div class="links-group">
+            <a href="https://t.me/YunaTech" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-tg"><i class="fa-brands fa-telegram"></i></span> ТГ-канал (Железо)
+            </a>
+
+            <a href="https://t.me/SofTech_ahangaran" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-tg"><i class="fa-brands fa-telegram"></i></span> ТГ-канал (Софт)
+            </a>
+
+            <a href="https://t.me/YunaTech" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-tg"><i class="fa-solid fa-comment-dots"></i></span> Написать в Личку
+            </a>
+
+            <a href="https://www.instagram.com/e1tad0r/" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-inst"><i class="fa-brands fa-instagram"></i></span> Instagram
+            </a>
+
+            <a href="tel:+998931942706" class="btn">
+                <span class="icon-box color-phone"><i class="fa-solid fa-phone"></i></span> Позвонить мне
+            </a>
+
+            <a href="https://vk.com/id749281163" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-vk"><i class="fa-brands fa-vk"></i></span> ВКонтакте
+            </a>
+
+            <button class="btn" onclick="copyDiscord(this)" style="cursor: pointer; text-align: left; font-family: inherit; width: 100%;">
+                <span class="icon-box color-discord"><i class="fa-brands fa-discord"></i></span> Discord
+            </button>
+
+            <a href="https://steamcommunity.com/profiles/76561199367237860/" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-steam"><i class="fa-brands fa-steam"></i></span> Steam
+            </a>
+        </div>
+
+        <h2 class="section-title">Номер карты (Мультикард)</h2>
+
+        <div class="payment-cards">
+            <div class="compact-card">
+                <div class="card-details">
+                    <span class="card-title"><span class="visa">VISA</span> / <span class="humo">HUMO</span></span>
+                    <span class="card-number" id="main-card">4073 4200 4799 5760</span>
+                </div>
+                <button class="copy-btn-compact" onclick="copyText('main-card', this)">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Скопировано!</div>
+
+    <script>
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText.replace(/\s+/g, '');
+
+            const copyToClipboardFallback = (text) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback: Oops, unable to copy', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
+            const handleSuccess = () => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = 'Copied!';
+                btnElement.style.background = '#fdf2f8';
+                btnElement.style.color = '#f472b6';
+                btnElement.style.borderColor = '#f472b6';
+
+                const toast = document.getElementById('toast');
+                toast.innerText = 'Номер карты скопирован!';
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.background = '';
+                    btnElement.style.color = '';
+                    btnElement.style.borderColor = '';
+                    toast.classList.remove('show');
+                }, 2000);
+            };
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(handleSuccess)
+                    .catch(err => {
+                        console.error('Failed to copy text: ', err);
+                        copyToClipboardFallback(textToCopy);
+                        handleSuccess();
+                    });
+            } else {
+                copyToClipboardFallback(textToCopy);
+                handleSuccess();
+            }
+        }
+
+        function copyDiscord(btnElement) {
+            const textToCopy = 'YunaTech';
+
+            const copyToClipboardFallback = (text) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) { }
+                document.body.removeChild(textArea);
+            };
+
+            const handleSuccess = () => {
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '<span class="icon-box color-discord"><i class="fa-solid fa-check" style="color: #f472b6"></i></span> <span style="color: #f472b6; font-weight: 600;">Copied YunaTech!</span>';
+                btnElement.style.background = '#fff';
+                btnElement.style.borderColor = '#f472b6';
+
+                const toast = document.getElementById('toast');
+                toast.innerText = 'Ник Discord скопирован!';
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.style.background = '';
+                    btnElement.style.borderColor = '';
+                    toast.classList.remove('show');
+                }, 2000);
+            };
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy).then(handleSuccess).catch(err => {
+                    copyToClipboardFallback(textToCopy);
+                    handleSuccess();
+                });
+            } else {
+                copyToClipboardFallback(textToCopy);
+                handleSuccess();
+            }
+        }
+    </script>
+</body>
+
+</html>
