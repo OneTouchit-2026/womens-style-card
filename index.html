@@ -10,14 +10,13 @@
     
     <style>
         :root {
-            /* Светлая и нежная цветовая палитра */
             --bg-color: #fdfbfb;
             --glass-bg: rgba(255, 255, 255, 0.7);
             --glass-hover: rgba(255, 255, 255, 0.95);
             --glass-border: rgba(255, 255, 255, 0.8);
-            --text-primary: #1e293b; /* Темно-серый для отличной читаемости */
+            --text-primary: #1e293b;
             --text-secondary: #64748b;
-            --accent-color: #f472b6; /* Мягкий розовый */
+            --accent-color: #f472b6;
             --accent-glow: rgba(244, 114, 182, 0.3);
             --border-radius: 20px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -43,7 +42,6 @@
             overflow-x: hidden;
         }
 
-        /* Анимированный нежный фон */
         .bg-animated {
             position: fixed;
             top: 0;
@@ -66,7 +64,7 @@
         .shape-1 {
             width: 400px;
             height: 400px;
-            background: rgba(251, 194, 235, 0.5); /* Пудрово-розовый */
+            background: rgba(251, 194, 235, 0.5);
             top: -5%;
             left: -10%;
         }
@@ -74,7 +72,7 @@
         .shape-2 {
             width: 500px;
             height: 500px;
-            background: rgba(166, 193, 238, 0.4); /* Нежно-голубой/персиковый оттенок */
+            background: rgba(166, 193, 238, 0.4);
             bottom: -10%;
             right: -10%;
             animation-delay: -5s;
@@ -86,7 +84,6 @@
             100% { transform: translate(40px, 40px) scale(1.05); }
         }
 
-        /* Основной контент */
         .profile-container {
             text-align: center;
             margin-bottom: 32px;
@@ -132,7 +129,6 @@
             gap: 14px;
         }
 
-        /* Эффект Glassmorphism для светлой темы */
         .btn {
             text-decoration: none;
             color: var(--text-primary);
@@ -251,17 +247,14 @@
             transform: scale(0.92);
         }
 
-        /* Цвета иконок */
-        .color-tg { color: #38bdf8; }
-        .color-inst { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .color-tg    { color: #38bdf8; }
+        .color-inst  { background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .color-phone { color: #10b981; }
-        .color-vk { color: #0077ff; }
-        .color-discord { color: #5865F2; }
-        .color-steam { color: #0284c7; }
-        .humo { color: #eab308; }
-        .visa { color: #3b82f6; }
+        .color-web   { color: #f472b6; }
+        .color-map   { color: #ef4444; }
+        .humo        { color: #eab308; }
+        .visa        { color: #3b82f6; }
 
-        /* Уведомление */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -293,44 +286,45 @@
     </div>
 
     <div class="profile-container">
-        <img src="logo.jpg" alt="Sabrina  Logo" class="profile-img">
-        <h1>Sabrina </h1>
+        <img src="logo.jpg" alt="Sabrina Logo" class="profile-img">
+        <h1>Sabrina</h1>
         <p>Сборка ПК | Софт | Решения</p>
     </div>
 
     <div class="content-container">
+
         <div class="links-group">
-            <a href="https://t.me/YunaTech" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-tg"><i class="fa-brands fa-telegram"></i></span> ТГ-канал (Железо)
-            </a>
 
-            <a href="https://t.me/SofTech_ahangaran" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-tg"><i class="fa-brands fa-telegram"></i></span> ТГ-канал (Софт)
-            </a>
-
-            <a href="https://t.me/YunaTech" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-tg"><i class="fa-solid fa-comment-dots"></i></span> Написать в Личку
-            </a>
-
-            <a href="https://www.instagram.com/e1tad0r/" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-inst"><i class="fa-brands fa-instagram"></i></span> Instagram
-            </a>
-
+            <!-- 1. Телефон -->
             <a href="tel:+998931942706" class="btn">
-                <span class="icon-box color-phone"><i class="fa-solid fa-phone"></i></span> Позвонить мне
+                <span class="icon-box color-phone"><i class="fa-solid fa-phone"></i></span>
+                Позвонить мне
             </a>
 
-            <a href="https://vk.com/id749281163" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-vk"><i class="fa-brands fa-vk"></i></span> ВКонтакте
+            <!-- 2. Телеграм (личка) -->
+            <a href="https://t.me/azamat_NFC" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-tg"><i class="fa-solid fa-comment-dots"></i></span>
+                Написать в Личку
             </a>
 
-            <button class="btn" onclick="copyDiscord(this)" style="cursor: pointer; text-align: left; font-family: inherit; width: 100%;">
-                <span class="icon-box color-discord"><i class="fa-brands fa-discord"></i></span> Discord
-            </button>
-
-            <a href="https://steamcommunity.com/profiles/76561199367237860/" class="btn" target="_blank" rel="noopener noreferrer">
-                <span class="icon-box color-steam"><i class="fa-brands fa-steam"></i></span> Steam
+            <!-- 3. Инстаграм -->
+            <a href="https://www.instagram.com/e1tad0r/" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-inst"><i class="fa-brands fa-instagram"></i></span>
+                Instagram
             </a>
+
+            <!-- 4. Веб-сайт -->
+            <a href="https://onetouchit-2026.github.io/Catalog/" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-web"><i class="fa-solid fa-globe"></i></span>
+                Веб-сайт / Каталог
+            </a>
+
+            <!-- 5. Местоположение -->
+            <a href="https://yandex.uz/maps/geo/ohangaron/1508546168/?ll=69.639530%2C40.913885&z=14.02" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-map"><i class="fa-solid fa-location-dot"></i></span>
+                Местоположение
+            </a>
+
         </div>
 
         <h2 class="section-title">Номер карты (Мультикард)</h2>
@@ -344,6 +338,7 @@
                 <button class="copy-btn-compact" onclick="copyText('main-card', this)">Copy</button>
             </div>
         </div>
+
     </div>
 
     <div id="toast" class="toast">Скопировано!</div>
@@ -359,11 +354,7 @@
                 document.body.appendChild(textArea);
                 textArea.focus();
                 textArea.select();
-                try {
-                    document.execCommand('copy');
-                } catch (err) {
-                    console.error('Fallback: Oops, unable to copy', err);
-                }
+                try { document.execCommand('copy'); } catch (err) {}
                 document.body.removeChild(textArea);
             };
 
@@ -388,54 +379,6 @@
             };
 
             if (navigator.clipboard) {
-                navigator.clipboard.writeText(textToCopy)
-                    .then(handleSuccess)
-                    .catch(err => {
-                        console.error('Failed to copy text: ', err);
-                        copyToClipboardFallback(textToCopy);
-                        handleSuccess();
-                    });
-            } else {
-                copyToClipboardFallback(textToCopy);
-                handleSuccess();
-            }
-        }
-
-        function copyDiscord(btnElement) {
-            const textToCopy = 'YunaTech';
-
-            const copyToClipboardFallback = (text) => {
-                const textArea = document.createElement("textarea");
-                textArea.value = text;
-                textArea.style.position = "fixed";
-                document.body.appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                } catch (err) { }
-                document.body.removeChild(textArea);
-            };
-
-            const handleSuccess = () => {
-                const originalText = btnElement.innerHTML;
-                btnElement.innerHTML = '<span class="icon-box color-discord"><i class="fa-solid fa-check" style="color: #f472b6"></i></span> <span style="color: #f472b6; font-weight: 600;">Copied YunaTech!</span>';
-                btnElement.style.background = '#fff';
-                btnElement.style.borderColor = '#f472b6';
-
-                const toast = document.getElementById('toast');
-                toast.innerText = 'Ник Discord скопирован!';
-                toast.classList.add('show');
-
-                setTimeout(() => {
-                    btnElement.innerHTML = originalText;
-                    btnElement.style.background = '';
-                    btnElement.style.borderColor = '';
-                    toast.classList.remove('show');
-                }, 2000);
-            };
-
-            if (navigator.clipboard) {
                 navigator.clipboard.writeText(textToCopy).then(handleSuccess).catch(err => {
                     copyToClipboardFallback(textToCopy);
                     handleSuccess();
@@ -447,5 +390,4 @@
         }
     </script>
 </body>
-
 </html>
